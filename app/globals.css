@@ -389,7 +389,7 @@ a:hover .arrow { transform: translateX(5px); }
 .others.three .other { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px; background: #fff; border-radius: var(--r); min-height: 96px; }
 .ts-stay strong { display: block; font-weight: 400; font-size: clamp(23px, 2vw, 32px); letter-spacing: -0.025em; line-height: 1.1; }
 .ts-stay span { color: var(--mute); font-size: 16px; }
-.salt-b { margin-top: 8px; }
+.salt a.salt-b { margin-top: 8px; color: var(--ink); }
 @media (max-width: 1040px) { .ts-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* telefon si tableta */
