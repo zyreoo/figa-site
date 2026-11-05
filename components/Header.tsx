@@ -12,6 +12,7 @@ import Photo from "./Photo";
 import { IconPhone } from "./Icons";
 
 const LINKS = [
+  { href: "/terapii-saline", label: "Terapii saline" },
   { href: "/ce-faci-la-figa", label: "Ce faci la Figa" },
   { href: "/galerie", label: "Galerie" },
   { href: "/contact", label: "Contact" },

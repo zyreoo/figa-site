@@ -51,18 +51,19 @@ export default function Home() {
             <Words id="sare" text="Aici se scoate sare de peste 3.000 de ani" className="h-xl" />
             <Reveal className="prose salt-p" delay={0.15}>
               <p>Arheologii au găsit la Figa jgheaburi de lemn din epoca bronzului, folosite la exploatarea sării. E considerat unul dintre cele mai importante situri de acest fel din Europa.</p>
-              <p>Azi, sarea ajunge în lacuri, în nămol și în aerul de lângă instalațiile de aerosoli salini.</p>
+              <p>Azi, aceeași sare stă la baza terapiilor saline din complex: aerosoli, camera de sare, băi sărate și nămol.</p>
+              <p><Link className="btn btn-white salt-b" href="/terapii-saline">Vezi terapiile saline <IconArrow /></Link></p>
               <p className="small"><a href="https://agerpres.ro/cultura-media/2025/06/13/bistrita-nasaud-expozitia-milenii-de-exploatare-a-sarii-la-baile-figa-vernisata-la-capatul-a-20-de-a--1459199">Despre expoziția „Milenii de exploatare a sării”, Agerpres</a></p>
             </Reveal>
           </div>
           <div className="salt-i">
             <figure>
-              <Parallax className="ph r34" name="turn" alt="Turn rotund de aerosoli salini, din crengi, cu acoperiș de țiglă" sizes="(max-width: 900px) 40vw, 18vw" />
-              <figcaption>Aerosoli salini, circular</figcaption>
+              <Parallax className="ph r34" name="ts-sare" alt="Camera de sare de la Băile Figa" sizes="(max-width: 900px) 40vw, 18vw" />
+              <figcaption>Camera de sare</figcaption>
             </figure>
             <figure>
-              <Parallax className="ph r11" name="aer" alt="Galerie de lemn cu pereți din crengi, pentru aerosoli salini" sizes="(max-width: 900px) 60vw, 26vw" />
-              <figcaption>Aerosoli salini, longitudinal</figcaption>
+              <Parallax className="ph r11" name="ts-ext" alt="Clădirea Terapii Saline de la Băile Figa" sizes="(max-width: 900px) 60vw, 26vw" />
+              <figcaption>Clădirea Terapii Saline</figcaption>
             </figure>
           </div>
         </div>

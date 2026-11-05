@@ -268,6 +268,86 @@ export const images: Record<string, [number, number]> = {
     800,
     600
   ],
+  "st-carusel": [
+    1200,
+    1800
+  ],
+  "st-panorama": [
+    1255,
+    706
+  ],
+  "st-sus": [
+    1800,
+    1200
+  ],
+  "ts-apus": [
+    1200,
+    1800
+  ],
+  "ts-bazin-p": [
+    1200,
+    1800
+  ],
+  "ts-bazin": [
+    1800,
+    1200
+  ],
+  "ts-cabinet": [
+    1200,
+    1800
+  ],
+  "ts-cada": [
+    1200,
+    1800
+  ],
+  "ts-ext": [
+    1800,
+    1200
+  ],
+  "ts-hol": [
+    1800,
+    1200
+  ],
+  "ts-jacuzzi": [
+    1800,
+    1200
+  ],
+  "ts-panou": [
+    1200,
+    1800
+  ],
+  "ts-sare": [
+    1200,
+    1800
+  ],
+  "ts-sare2": [
+    1200,
+    1800
+  ],
+  "ts-sauna-p": [
+    1200,
+    1800
+  ],
+  "ts-sauna": [
+    1800,
+    1200
+  ],
+  "ts-sezlong": [
+    1800,
+    1200
+  ],
+  "ts-strada": [
+    1800,
+    1200
+  ],
+  "ts-terasa": [
+    1800,
+    1200
+  ],
+  "ts-tratament": [
+    1800,
+    1200
+  ],
   "turn": [
     768,
     576

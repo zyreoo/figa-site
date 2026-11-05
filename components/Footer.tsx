@@ -36,6 +36,7 @@ export default function Footer() {
             <div>
               <span className="label">Stațiunea</span>
               <ul>
+                <li><Link href="/terapii-saline">Terapii saline</Link></li>
                 <li><Link href="/ce-faci-la-figa">Ce faci la Figa</Link></li>
                 <li><Link href="/galerie">Galerie</Link></li>
                 <li><Link href="/contact">Contact</Link></li>

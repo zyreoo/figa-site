@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...pageMeta({
     title: "Cazare Băile Figa | Hotel, cabane și căsuțe la 3 km de Beclean",
-    description: "Cazare la Băile Figa: Hotel Select, Cabane Panoramic VIP și Căsuțe Sebastian, de la 250 lei pe noapte. Vouchere de vacanță acceptate. Rezervări la 0743 092 226.",
+    description: "Cazare la Băile Figa: Hotel Select, Cabane Panoramic VIP și Căsuțe Sebastian, de la 250 lei pe noapte, aproape de Aqualand și terapiile saline. Rezervări la 0743 092 226.",
     path: "/",
     og: "home",
   }),

@@ -1,4 +1,6 @@
 import { pageMeta } from "@/lib/seo";
+import Link from "next/link";
+import { IconArrow } from "@/components/Icons";
 import { PhotoReveal, Reveal, Words } from "@/components/Motion";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
@@ -86,7 +88,20 @@ export default function CeFaci() {
         </div>
       </section>
 
-      <section className="sect bg-soft anchor" id="sport">
+      <section className="sect bg-soft anchor" id="terapii">
+        <div className="wrap split">
+          <div>
+            <Words text="Terapii saline" className="h-xl" />
+            <Reveal delay={0.1}>
+              <p className="prose mute mt">Clădirea de terapii saline are aerosoli, cameră de sare, bazin interior cu apă sărată, săli de tratament, saune și jacuzzi pe terasă.</p>
+              <Link className="btn btn-ink mt-b" href="/terapii-saline">Vezi terapiile <IconArrow /></Link>
+            </Reveal>
+          </div>
+          <PhotoReveal className="sp" name="ts-bazin" alt="Bazinul interior cu apă sărată" sizes={SZ} />
+        </div>
+      </section>
+
+      <section className="sect anchor" id="sport">
         <div className="wrap split flip">
           <div><Words text="Sport și joacă" className="h-xl" /><Reveal delay={0.1}><List items={["2 terenuri de tenis, cu rachete incluse în preț", "Teren de fotbal cu gazon sintetic", "Parc de aventură cu tiroliană", "Labirint verde din tuia", "Zonă de joacă din lemn ecologic"]} /></Reveal></div>
           <PhotoReveal className="sp" name="sport" alt="Terenuri de sport cu dealuri împădurite în spate" sizes={SZ} />
