@@ -135,8 +135,7 @@ a:hover .arrow { transform: translateX(5px); }
 .hero h1 { font-size: clamp(40px, 4.7vw, 88px); line-height: 1.02; max-width: 12em; }
 .pill { display: flex; align-items: center; gap: 18px; padding: 7px 7px 7px 24px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: inset 0 0 0 1px var(--line-w); font-size: 17px; white-space: nowrap; text-decoration: none; }
 @media (max-width: 760px) {
-  .hero-word { font-size: 33vw; white-space: normal; line-height: 0.84; text-align: left; padding-left: var(--gut); top: 92px; }
-  .hero-word .c-mask:nth-child(6) { display: block; height: 0; }
+  .hero-word { top: 88px; }
   .hero-fg img { object-position: 80% 100%; }
   .hero-script, .pill { display: none; }
   .m-script { display: block; color: var(--accent-light); font-size: 42px; margin-bottom: 4px; }
@@ -232,7 +231,7 @@ a:hover .arrow { transform: translateX(5px); }
 .foot-g a { text-decoration: none; } .foot-g a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .foot-g ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
 .foot-logo { width: 88px; height: 88px; margin-bottom: 14px; }
-.foot-word { display: block; font-size: 23.4vw; line-height: 0.8; letter-spacing: -0.05em; font-weight: 500; white-space: nowrap; text-align: center; margin-top: clamp(40px, 5vw, 80px); margin-bottom: -0.09em; color: var(--accent); }
+.foot-word { display: block; font-size: 23.4vw; line-height: 1.12; letter-spacing: -0.05em; font-weight: 500; white-space: nowrap; text-align: center; margin-top: clamp(24px, 4vw, 60px); color: var(--accent); }
 .foot-word span { display: inline-block; }
 @media (max-width: 820px) { .foot-g { grid-template-columns: 1fr 1fr; } .foot-g > :first-child { grid-column: 1 / -1; } }
 
@@ -350,6 +349,91 @@ a:hover .arrow { transform: translateX(5px); }
 @media (max-width: 760px) { .lb-p, .lb-n { top: auto; bottom: 8px; margin: 0; } }
 
 .nf { min-height: 80vh; padding-top: 160px; padding-bottom: 80px; }
+
+/* firimituri, intrebari, comparatie pe telefon, pagina legala */
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 2px 8px; list-style: none; margin: 0 0 14px; padding: 0; font-size: 14px; opacity: 0.86; }
+.crumbs li + li::before { content: "/"; margin-right: 8px; opacity: 0.6; }
+.crumbs a { text-underline-offset: 3px; display: inline-block; padding-block: 6px; }
+.crumbs span { display: inline-block; padding-block: 6px; }
+.faq { max-width: 860px; }
+.faq details { border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 18px; align-items: center; min-height: 56px; padding: 12px 0; font-size: clamp(19px, 1.5vw, 23px); letter-spacing: -0.015em; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; flex: none; font-size: 26px; line-height: 1; color: var(--accent); transition: transform 0.3s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding: 0 34px 18px 0; }
+.cmp-m { display: none; }
+.cmp-c { background: #fff; border-radius: var(--r); padding: 18px; }
+.cmp-c h3 { font-size: 25px; margin-bottom: 10px; }
+.cmp-c dl { margin: 0; }
+.cmp-c dl > div { display: grid; grid-template-columns: 110px 1fr; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); font-size: 16px; line-height: 1.35; }
+.cmp-c dt { color: var(--mute); }
+.cmp-c dd { margin: 0; }
+.legal { padding-top: 130px; padding-bottom: 80px; max-width: 900px; }
+.legal-t { margin-top: 26px; display: grid; gap: 12px; }
+.legal-t h2 { font-size: clamp(23px, 2vw, 30px); margin-top: 16px; }
+
+/* telefon si tableta */
+html { -webkit-tap-highlight-color: transparent; }
+@media (max-width: 900px) {
+  .band-g { grid-template-columns: 1fr; }
+  .band-t { max-width: none; }
+  .band-f { max-width: 340px; }
+}
+@media (max-width: 760px) {
+  .bar-tel-m { display: none; }
+  .burger { margin-left: auto; }
+  .hero h1 { font-size: clamp(34px, 9.6vw, 44px); }
+  .stay { top: 80px; height: 68svh; min-height: 430px; max-height: 620px; margin-bottom: 12px; }
+  .stay-c { padding: 18px 18px 20px; gap: 12px; }
+  .stay h3 { font-size: clamp(38px, 11vw, 52px); }
+  .stay-go { margin-top: 6px; font-size: 16px; }
+  .stats .stat:nth-child(3) { display: block; }
+  .stat b { font-size: 21px; }
+  .stat span { font-size: 13px; }
+  .stats { gap: 10px 18px; }
+  .enter { height: 220vh; }
+  .list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14px; font-size: 16px; line-height: 1.3; }
+  .list.one { grid-template-columns: 1fr; font-size: 17px; }
+  .list li { padding: 11px 0; }
+  .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 10px; }
+  .room h3 { font-size: 17px; margin-top: 8px; letter-spacing: -0.01em; }
+  .masonry { columns: 2; column-gap: 8px; }
+  .masonry button { margin-bottom: 8px; }
+  .cmp-w { display: none; }
+  .cmp-m { display: grid; gap: 10px; }
+  .foot-g ul { gap: 0; }
+  .foot-g li a { display: block; padding: 10px 0; }
+  .foot-g { gap: 22px 16px; }
+  .lnk { min-height: 40px; }
+  .faq details p { padding-right: 0; }
+  .loc { min-height: 70svh; }
+}
+/* telefon tinut pe orizontala */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero, .phero { min-height: 400px; height: 100svh; }
+  .phero.short { height: 100svh; min-height: 340px; }
+  .hero-word { font-size: 15vw; top: 72px; }
+  .hero-script { display: none; }
+  .hero h1 { font-size: clamp(28px, 4.4vw, 40px); }
+  .phero h1 { font-size: clamp(38px, 7vw, 64px); }
+  .phero-c, .hero-c { padding-bottom: 18px; }
+  .phero .sub { font-size: 16px; margin-bottom: 8px; }
+  .crumbs ol { margin-bottom: 2px; }
+  .stay { top: 8px; height: calc(100svh - 16px); min-height: 300px; }
+  .stay h3 { font-size: 40px; }
+  .enter-t { padding-bottom: 18px; }
+  .enter-t .h-l { font-size: 30px; }
+  .bar { top: 6px; }
+  .bar-in { height: 54px; }
+  .brand img { width: 40px; height: 40px; }
+  .burger, .bar-tel-m { width: 42px; height: 42px; }
+  .burger i { left: 11px; right: 11px; }
+  .burger i:first-child { top: 16px; } .burger i:last-child { top: 24px; }
+  .burger.is-x i:first-child, .burger.is-x i:last-child { top: 20px; }
+  .mmenu { padding-top: 70px; padding-bottom: 24px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .wave, .spot i::after { animation: none; }

@@ -38,8 +38,8 @@ export const STAYS: Stay[] = [
     name: "Hotel Select",
     short: "Hotel",
     title: "Hotel Select Băile Figa | Camere la 300 lei pe noapte",
-    description: "Hotel Select la Băile Figa: 8 camere pe 3 niveluri, aproape de Centrul Legacy. Rezervări la 0743 092 226.",
-    sub: "8 camere pentru cupluri și familii, aproape de Centrul Legacy.",
+    description: "Hotel Select la Băile Figa: 8 camere pe 3 niveluri, la 300 lei pe noapte, aproape de Centrul Legacy. Vouchere de vacanță acceptate. Rezervări la 0743 092 226.",
+    sub: "8 camere pentru cupluri și familii la Băile Figa, aproape de Centrul Legacy.",
     price: "300 lei",
     priceNote: "pe noapte",
     hero: "hotel-hero",
@@ -78,8 +78,8 @@ export const STAYS: Stay[] = [
     name: "Cabane Panoramic",
     short: "Cabane",
     title: "Cabane Panoramic VIP Băile Figa | 12 persoane, 750 lei pe noapte",
-    description: "Două cabane pe 3 niveluri pentru grupuri de până la 12 persoane, la intrarea în stațiunea Băile Figa. Rezervări la 0743 092 226.",
-    sub: "Două cabane pe 3 niveluri, la 10 m de intrarea în stațiune.",
+    description: "Cabane Panoramic VIP la Băile Figa: 750 lei pe noapte, până la 12 persoane, cu bucătărie, living și foișor. Vouchere de vacanță acceptate. Rezervări la 0743 092 226.",
+    sub: "Două cabane pe 3 niveluri la Băile Figa, la 10 m de intrarea în stațiune.",
     price: "750 lei",
     priceNote: "pe noapte, cabana întreagă",
     hero: "pan-hero",
@@ -117,9 +117,9 @@ export const STAYS: Stay[] = [
     slug: "casute-sebastian",
     name: "Căsuțe Sebastian",
     short: "Căsuțe",
-    title: "Căsuțele Sebastian Băile Figa | 250 lei pe noapte",
-    description: "Căsuțe din lemn cu pat king-size, baie proprie și terasă, la 20 m de complexul Băile Figa. Rezervări la 0743 092 226.",
-    sub: "Căsuțe din lemn cu baie proprie și terasă, la 20 m de complex.",
+    title: "Căsuțele Sebastian Băile Figa | Căsuțe la 250 lei pe noapte",
+    description: "Căsuțele Sebastian la Băile Figa: 250 lei pe noapte, pat king-size, baie proprie și terasă, la 20 m de complex. Vouchere de vacanță acceptate. Rezervări la 0743 092 226.",
+    sub: "Căsuțe din lemn la Băile Figa, cu baie proprie și terasă, la 20 m de complex.",
     price: "250 lei",
     priceNote: "pe noapte",
     hero: "cas-hero",
@@ -174,3 +174,21 @@ export const GALLERY: { id: string; label: string; images: string[] }[] = [
   { id: "casute", label: "Căsuțe Sebastian", images: ["cas-hero", "cas-pat", "det-gazda", "cas-camera", "cas-ext", "cas-hamac", "det-semn", "cas-baie2", "cas-sah", "cas-poarta", "det-sah", "cas-mese", "cas-receptie", "cas-rand"] },
   { id: "statiune", label: "Stațiunea", images: ["aq-tobogane", "leg-sus", "aq-spirala", "leg-piscina", "aq-piscina", "leg-rotund", "aq-rau", "leg-ext", "aq-oameni", "leg-tobogan", "parc", "balnear", "sport", "parc-sus", "aq-stropi", "aq-sezlong", "leg-receptie", "leg-mozaic", "namol", "turn", "aer", "dron-apus"] },
 ];
+
+export const FAQ = [
+  { q: "Cum fac o rezervare?", a: "Rezervările se fac doar la telefon, la 0743 092 226 sau 0759 021 090. Spune-ne perioada și numărul de persoane, iar noi îți comunicăm disponibilitatea." },
+  { q: "Cât costă cazarea la Băile Figa?", a: "O cameră la Hotel Select costă 300 lei pe noapte, o căsuță Sebastian 250 lei pe noapte, iar o cabană Panoramic VIP 750 lei pe noapte, pentru toată cabana." },
+  { q: "La ce oră este check-in și check-out?", a: "Check-in la ora 12:00 și check-out la ora 10:00." },
+  { q: "Accesul la piscine și Aqualand este inclus în cazare?", a: "Nu. Accesul în Parcul balnear și în Centrul Legacy nu este inclus în cazare și se plătește separat." },
+  { q: "Acceptați vouchere de vacanță?", a: "Da, acceptăm vouchere de vacanță la toate variantele de cazare. Poți plăti și cash, prin virament bancar sau cu cardul de vacanță." },
+  { q: "Câte persoane încap într-o cabană Panoramic?", a: "Fiecare cabană primește până la 12 persoane, adică 8 adulți și 4 copii. Sunt două cabane, deci până la 24 de persoane în total." },
+  { q: "Unde se află Băile Figa?", a: "Stațiunea este în județul Bistrița-Năsăud, la mai puțin de 3 km de Beclean." },
+];
+
+// Descrierea fiecarei poze, pentru Google Images si cititoare de ecran.
+export const ALT: Record<string, string> = {
+  "hotel-hero": "Hotel Select Băile Figa seara, fațadă de lemn luminată", "hotel-room-1": "Cameră la mansardă cu grinzi de lemn, Hotel Select", "hotel-sus": "Dormitor cu pereți de lemn, Hotel Select", "cam-suita": "Suită Romantică cu lebede din prosoape și petale de trandafir", "hotel-terasa": "Terasă cu două fotolii, Hotel Select", "cam-deluxe": "Cameră Dublă Deluxe, Hotel Select", "hotel-baie": "Baie cu cadă, Hotel Select", "cam-natura": "Cameră Dublă Natura Deluxe, Hotel Select", "hotel-room-2": "Cameră cu tapet de plante, Hotel Select", "cam-premium": "Cameră Premium, Hotel Select", "hotel-front": "Fațada Hotelului Select seara", "cam-familii": "Cameră pentru familii, Hotel Select", "cam-familie-c": "Cameră de Familie Confort, Hotel Select", "cam-confort": "Cameră Dublă Confort, Hotel Select", "cam-eleganta": "Cameră Dublă Elegantă și Confort, Hotel Select",
+  "pan-hero": "Cabane Panoramic VIP la apus, Băile Figa", "pan-open": "Living și bucătărie deschisă, cabană Panoramic VIP", "pan-foc": "Vatră de foc lângă foișorul cabanelor Panoramic", "pan-dron": "Cabanele Panoramic VIP și foișorul, văzute de sus", "pan-masa": "Masă lungă cu scaune albe, cabană Panoramic VIP", "pan-zi": "Cabane Panoramic VIP ziua, cu foișor și gazon", "pan-dorm": "Dormitor cu pereți de lemn, cabană Panoramic VIP", "pan-foisor": "Foișor de lemn cu flori, cabane Panoramic", "pan-scari": "Scară de lemn în interiorul unei cabane Panoramic", "pan-dorm2": "Dormitor la mansardă, cabană Panoramic VIP", "pan-foisor2": "Foișor de lemn cu masă lungă", "det-grinda": "Grindă de lemn cioplită la foișor", "det-ceaun": "Ceaun de fontă într-un cuptor de cărămidă", "om-familie": "Familie în curtea cabanelor Panoramic",
+  "cas-hero": "Căsuțele Sebastian din lemn, în soare, Băile Figa", "cas-pat": "Pat mare cu perne într-o căsuță Sebastian", "det-gazda": "Recepția Căsuțelor Sebastian, cu flori", "cas-camera": "Interior de căsuță Sebastian, cu televizor și frigider", "cas-ext": "Două Căsuțe Sebastian cu flori la ferestre", "cas-hamac": "Hamac albastru pe terasa unei căsuțe", "det-semn": "Firma de lemn Căsuțe Sebastian, cu numărul de telefon", "cas-baie2": "Baie cu duș într-o căsuță Sebastian", "cas-sah": "Căsuțe de lemn, cu o tablă de șah pe masă", "cas-poarta": "Poarta satului de vacanță, acoperită cu stuf", "det-sah": "Două persoane joacă șah pe terasă", "cas-mese": "Mese de lemn sub acoperiș, lângă căsuțe", "cas-receptie": "Recepția Căsuțelor Sebastian", "cas-rand": "Șir de căsuțe de lemn, Băile Figa",
+  "aq-tobogane": "Tobogane colorate și piscină la Aqualand Băile Figa", "leg-sus": "Bazin interior cu colace galbene, Centrul Legacy", "aq-spirala": "Tobogan alb în spirală, Băile Figa", "leg-piscina": "Piscină interioară cu mozaic, Centrul Legacy", "aq-piscina": "Piscina exterioară de la Băile Figa", "leg-rotund": "Bazin rotund cu mozaic, Centrul Legacy", "aq-rau": "Lazy River printre spații verzi, Băile Figa", "leg-ext": "Clădirea Centrului Legacy, Băile Figa", "aq-oameni": "Tineri care sar în piscină, Băile Figa", "leg-tobogan": "Tobogan alb interior, Centrul Legacy", "parc": "Parcul stațiunii Băile Figa, cu alei și umbrele de stuf", "balnear": "Oameni în bazinul cu apă sărată, Băile Figa", "sport": "Terenuri de sport, Băile Figa", "parc-sus": "Stațiunea Băile Figa văzută de sus", "aq-stropi": "Sosire de pe tobogan, cu stropi, Băile Figa", "aq-sezlong": "Șezlonguri și umbrele lângă tobogane", "leg-receptie": "Recepția Centrului Legacy", "leg-mozaic": "Bazin cu mozaic și jacuzzi, Centrul Legacy", "namol": "Oameni în bazinul rustic cu nămol, Băile Figa", "turn": "Turn circular de aerosoli salini, Băile Figa", "aer": "Galerie de aerosoli salini, Băile Figa", "dron-apus": "Stațiunea Băile Figa din dronă, la apus",
+};

@@ -2,10 +2,11 @@
 
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import Crumbs from "./Crumbs";
 import { EASE, Words } from "./Motion";
 import Photo from "./Photo";
 
-export default function PageHero({ title, sub, image, alt, short, position }: { title: string; sub?: string; image: string; alt: string; short?: boolean; position?: string }) {
+export default function PageHero({ title, sub, image, alt, short, position, crumbs }: { title: string; sub?: string; image: string; alt: string; short?: boolean; position?: string; crumbs?: { name: string; path: string }[] }) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -14,10 +15,11 @@ export default function PageHero({ title, sub, image, alt, short, position }: { 
     <section ref={ref} className={`phero${short ? " short" : ""}`} aria-label={title}>
       <motion.div className="phero-i" style={reduce ? undefined : { y }}>
         <motion.div data-r className="phero-z" initial={{ scale: 1.14 }} animate={{ scale: 1 }} transition={{ duration: 1.8, ease: EASE }}>
-          <Photo name={image} alt={alt} fill preload quality={85} style={position ? { objectPosition: position } : undefined} />
+          <Photo name={image} alt={alt} fill preload quality={85} sizes="(max-aspect-ratio: 1/1) 150vw, 100vw" style={position ? { objectPosition: position } : undefined} />
         </motion.div>
       </motion.div>
       <div className="phero-c wrap">
+        {crumbs ? <Crumbs items={crumbs} /> : null}
         {sub ? (
           <motion.p data-r className="sub" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: EASE, delay: 0.55 }}>
             {sub}

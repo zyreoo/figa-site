@@ -51,7 +51,7 @@ export default function HomeHero() {
 
       <motion.div className="hero-fg" style={reduce ? undefined : { x: fgX, y: fgY, scale: fgScale }}>
         <motion.div data-r className="hero-fg-i" initial={{ y: 70, opacity: 0.4 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1.5, ease: EASE, delay: 0.15 }}>
-          <Photo name="hero-fg" alt="Cabanele Panoramic VIP seara, cu luminile aprinse" fill preload quality={85} />
+          <Photo name="hero-fg" alt="Cabanele Panoramic VIP de la Băile Figa, seara, cu luminile aprinse" fill preload quality={85} sizes="(max-aspect-ratio: 1/1) 150vw, 100vw" />
         </motion.div>
       </motion.div>
 
@@ -65,7 +65,7 @@ export default function HomeHero() {
             <motion.p data-r className="script m-script" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.9 }}>
               Litoralul Bistrițenilor
             </motion.p>
-            <Words as="h1" text="Cazare între dealuri, la 3 km de Beclean" onLoad delay={0.7} />
+            <Words as="h1" text="Cazare la Băile Figa, între dealuri, la 3 km de Beclean" onLoad delay={0.7} />
           </div>
           <motion.a data-r className="pill" href={PHONE.href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: EASE, delay: 1.15 }}>
             Rezervi cu un telefon

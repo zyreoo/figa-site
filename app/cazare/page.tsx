@@ -1,20 +1,26 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { IconArrow } from "@/components/Icons";
 import { PhotoReveal, Reveal, Words } from "@/components/Motion";
 import PageHero from "@/components/PageHero";
 import PhoneBand from "@/components/PhoneBand";
-import { STAYS } from "@/lib/site";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd, faqLd } from "@/lib/seo";
+import { FAQ, STAYS } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Cazare la Băile Figa | Hotel, cabane și căsuțe",
-  description: "Compară Hotel Select, Cabanele Panoramic VIP și Căsuțele Sebastian: preț, capacitate și distanță față de stațiune.",
-};
+export const metadata = pageMeta({
+  title: "Cazare la Băile Figa | Hotel, cabane și căsuțe, de la 250 lei",
+  description: "Compară Hotel Select, Cabanele Panoramic VIP și Căsuțele Sebastian de la Băile Figa: preț, capacitate și locație. Vouchere de vacanță acceptate.",
+  path: "/cazare",
+  og: "cazare",
+});
 
 export default function Cazare() {
   return (
     <>
-      <PageHero title="Cazare" sub="Trei variante, la câțiva pași de stațiune. Acceptăm vouchere de vacanță." image="pan-dron" alt="Vedere de sus asupra cabanelor Panoramic VIP" short />
+      <JsonLd data={breadcrumbLd([{ name: "Acasă", path: "/" }, { name: "Cazare", path: "/cazare" }])} />
+      <JsonLd data={faqLd()} />
+      <PageHero crumbs={[{ name: "Acasă", path: "/" }, { name: "Cazare", path: "/cazare" }]} title="Cazare la Băile Figa" sub="Trei variante, la câțiva pași de stațiune. Acceptăm vouchere de vacanță." image="pan-dron" alt="Vedere de sus asupra cabanelor Panoramic VIP" short />
       <section className="sect wrap">
         <div className="rows">
           {STAYS.map((s, i) => (
@@ -46,6 +52,30 @@ export default function Cazare() {
               </tbody>
             </table>
           </Reveal>
+          <div className="cmp-m">
+            {STAYS.map((s, i) => (
+              <Reveal key={s.slug} delay={i * 0.06} className="cmp-c">
+                <h3><Link href={`/cazare/${s.slug}`}>{s.name}</Link></h3>
+                <dl>
+                  <div><dt>Preț</dt><dd>{s.price} {s.priceNote}</dd></div>
+                  <div><dt>Capacitate</dt><dd>{s.compare.capacity}</dd></div>
+                  <div><dt>Potrivit pentru</dt><dd>{s.compare.bestFor}</dd></div>
+                  <div><dt>Locație</dt><dd>{s.compare.where}</dd></div>
+                </dl>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="sect wrap" aria-labelledby="intrebari">
+        <Words id="intrebari" text="Întrebări frecvente" className="h-l mb" />
+        <div className="faq">
+          {FAQ.map((f) => (
+            <details key={f.q}>
+              <summary>{f.q}</summary>
+              <p className="mute">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
       <PhoneBand />

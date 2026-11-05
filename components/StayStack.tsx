@@ -19,7 +19,7 @@ function Card({ stay, index, total, progress }: { stay: Stay; index: number; tot
     <motion.article className="stay" style={reduce ? undefined : { scale }}>
       <Link href={`/cazare/${stay.slug}`} className="stay-a">
         <motion.div className="stay-i" style={reduce ? undefined : { scale: imgScale }}>
-          <Photo name={stay.hero} alt={stay.heroAlt} fill sizes="100vw" quality={85} />
+          <Photo name={stay.hero} alt={stay.heroAlt} fill sizes="(max-aspect-ratio: 1/1) 150vw, 100vw" quality={85} />
         </motion.div>
         <div className="stay-c">
           <div>

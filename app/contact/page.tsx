@@ -1,19 +1,24 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { IconArrow } from "@/components/Icons";
 import { PhotoReveal, Reveal, Words } from "@/components/Motion";
 import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
 import PhoneBand from "@/components/PhoneBand";
+import { breadcrumbLd } from "@/lib/seo";
 import { MAP } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Contact și rezervări | Băile Figa Cazare 0743 092 226",
-  description: "Rezervări la 0743 092 226 sau 0759 021 090. Strada Băile Figa, la 3 km de Beclean.",
-};
+export const metadata = pageMeta({
+  title: "Contact și rezervări Băile Figa Cazare | 0743 092 226",
+  description: "Rezervări la 0743 092 226 sau 0759 021 090. Strada Băile Figa, Bistrița-Năsăud, la mai puțin de 3 km de Beclean. Check-in 12:00, check-out 10:00.",
+  path: "/contact",
+  og: "contact",
+});
 
 export default function Contact() {
   return (
     <>
-      <PageHero title="Contact" image="hotel-front" alt="Hotel Select seara" short position="50% 40%" />
+      <JsonLd data={breadcrumbLd([{ name: "Acasă", path: "/" }, { name: "Contact", path: "/contact" }])} />
+      <PageHero crumbs={[{ name: "Acasă", path: "/" }, { name: "Contact", path: "/contact" }]} title="Contact" image="hotel-front" alt="Hotel Select seara" short position="50% 40%" />
       <PhoneBand />
       <section className="sect wrap">
         <div className="split mb-l">

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { images } from "@/lib/images";
-import { GALLERY } from "@/lib/site";
+import { ALT, GALLERY } from "@/lib/site";
 import { lenisRef } from "@/lib/lenis";
 import { EASE } from "./Motion";
 
@@ -46,7 +46,7 @@ export default function Gallery() {
       <div className="masonry">
         {items.map((it, i) => (
           <motion.button data-r key={`${cat}-${it.name}`} type="button" aria-label={`Mărește poza: ${it.label}`} onClick={() => setOpen(i)} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} transition={{ duration: 0.8, ease: EASE }}>
-            <Image src={`/img/${it.name}.webp`} alt={it.label} width={images[it.name][0]} height={images[it.name][1]} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+            <Image src={`/img/${it.name}.webp`} alt={ALT[it.name] ?? it.label} width={images[it.name][0]} height={images[it.name][1]} sizes="(max-width: 1100px) 50vw, 33vw" />
           </motion.button>
         ))}
       </div>
@@ -54,7 +54,7 @@ export default function Gallery() {
         {current ? (
           <motion.div className="lb" role="dialog" aria-modal="true" aria-label={current.label} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} onClick={() => setOpen(null)}>
             <motion.div key={current.name} className="lb-i" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.45, ease: EASE }}>
-              <Image src={`/img/${current.name}.webp`} alt={current.label} fill sizes="100vw" quality={85} style={{ objectFit: "contain" }} onClick={(e) => e.stopPropagation()} />
+              <Image src={`/img/${current.name}.webp`} alt={ALT[current.name] ?? current.label} fill sizes="100vw" quality={85} style={{ objectFit: "contain" }} onClick={(e) => e.stopPropagation()} />
             </motion.div>
             <p className="lb-c">{current.label} · {(open ?? 0) + 1} din {items.length}</p>
             <button type="button" className="lb-b lb-x" aria-label="Închide" onClick={() => setOpen(null)}>×</button>

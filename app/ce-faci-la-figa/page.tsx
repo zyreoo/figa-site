@@ -1,12 +1,16 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PhotoReveal, Reveal, Words } from "@/components/Motion";
 import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
 import PhoneBand from "@/components/PhoneBand";
+import { breadcrumbLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Ce faci la Băile Figa | Aqualand, Legacy, apă sărată, sport",
-  description: "Aqualand, Centrul Legacy, apă sărată și nămol, tenis și fotbal la Băile Figa. Taxe și program.",
-};
+export const metadata = pageMeta({
+  title: "Ce faci la Băile Figa | Aqualand, Legacy, apă sărată, taxe și program",
+  description: "Aqualand, toboganul Marele Alb, Centrul Legacy, apă sărată și nămol, tenis și fotbal la Băile Figa. Vezi taxele și programul de acces.",
+  path: "/ce-faci-la-figa",
+  og: "ce-faci-la-figa",
+});
 
 function List({ items }: { items: string[] }) {
   return <ul className="list one">{items.map((i) => <li key={i}>{i}</li>)}</ul>;
@@ -26,7 +30,8 @@ const SZ = "(max-width: 860px) 100vw, 50vw";
 export default function CeFaci() {
   return (
     <>
-      <PageHero title="Ce faci la Figa" sub="Toate sunt la câțiva pași de cazare." image="leg-sus" alt="Bazin interior cu colace galbene în Centrul Legacy" />
+      <JsonLd data={breadcrumbLd([{ name: "Acasă", path: "/" }, { name: "Ce faci la Figa", path: "/ce-faci-la-figa" }])} />
+      <PageHero crumbs={[{ name: "Acasă", path: "/" }, { name: "Ce faci la Figa", path: "/ce-faci-la-figa" }]} title="Ce faci la Figa" sub="Toate sunt la câțiva pași de cazare." image="leg-sus" alt="Bazin interior cu colace galbene în Centrul Legacy" />
 
       <section className="sect wrap anchor" id="aqualand">
         <div className="split">

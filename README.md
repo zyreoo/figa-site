@@ -34,3 +34,12 @@ Adresele site-ului vechi sunt redirecționate în `next.config.ts`.
 - Telefoane și hartă: `lib/site.ts`
 - Taxe și program: `app/ce-faci-la-figa/page.tsx`
 - Poze: `public/img`. Dacă adaugi una, trece-i dimensiunile în `lib/images.ts`.
+
+## SEO
+
+- Titluri, descrieri și imagini de distribuire: `lib/seo.ts` și `metadata` din fiecare pagină
+- Date structurate (schema.org): `lib/seo.ts`
+- Sitemap și robots: `app/sitemap.ts`, `app/robots.ts`
+- Adresele `*.vercel.app` primesc `noindex`; se indexează doar domeniul real
+
+Când domeniul `bailefigacazare.ro` este mutat pe acest site, trimite `https://bailefigacazare.ro/sitemap.xml` în Google Search Console.

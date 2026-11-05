@@ -46,7 +46,7 @@ export default function Footer() {
               <ul>
                 <li><a href={PHONE.href}>{PHONE.label}</a></li>
                 <li><a href={PHONE2.href}>{PHONE2.label}</a></li>
-                <li><a href="https://bailefigacazare.ro/politica-de-confidentialitate/">Confidențialitate</a></li>
+                <li><Link href="/politica-de-confidentialitate">Confidențialitate</Link></li>
               </ul>
             </div>
           </div>

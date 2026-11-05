@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd, pageMeta, stayLd } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import EnterScroll from "@/components/EnterScroll";
 import { PhotoReveal, Reveal, Words } from "@/components/Motion";
@@ -18,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const stay = STAYS.find((s) => s.slug === slug);
   if (!stay) return {};
-  return { title: stay.title, description: stay.description, openGraph: { title: stay.title, description: stay.description, images: [`/img/${stay.hero}.webp`] } };
+  return pageMeta({ title: stay.title, description: stay.description, path: `/cazare/${stay.slug}`, og: stay.slug });
 }
 
 const SPOTS = [
@@ -105,9 +107,12 @@ export default async function StayPage({ params }: Props) {
   const { slug } = await params;
   const stay = STAYS.find((s) => s.slug === slug);
   if (!stay) notFound();
+  const crumbs = [{ name: "Acasă", path: "/" }, { name: "Cazare", path: "/cazare" }, { name: stay.name, path: `/cazare/${stay.slug}` }];
   return (
     <>
-      <PageHero title={stay.name} sub={stay.sub} image={stay.hero} alt={stay.heroAlt} />
+      <JsonLd data={stayLd(stay)} />
+      <JsonLd data={breadcrumbLd(crumbs)} />
+      <PageHero crumbs={crumbs} title={stay.name} sub={stay.sub} image={stay.hero} alt={stay.heroAlt} />
       <section className="sect wrap">
         <div className="facts">
           <Reveal><p className="label">Pe scurt</p></Reveal>

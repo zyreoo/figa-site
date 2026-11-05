@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: { qualities: [75, 85] },
+  images: { qualities: [75, 85], formats: ["image/avif", "image/webp"], minimumCacheTTL: 2592000 },
+  // Adresele de test de pe Vercel nu trebuie sa apara in Google, doar domeniul real.
+  async headers() {
+    return [{ source: "/:path*", has: [{ type: "host", value: "(?<sub>.*)\\.vercel\\.app" }], headers: [{ key: "X-Robots-Tag", value: "noindex" }] }];
+  },
   // Adresele de pe site-ul vechi, ca sa nu pierdem Google si reclamele.
   async redirects() {
     return [
@@ -17,6 +21,12 @@ const nextConfig: NextConfig = {
       { source: "/spa-si-relaxare", destination: "/ce-faci-la-figa#legacy", permanent: true },
       { source: "/spa", destination: "/ce-faci-la-figa#legacy", permanent: true },
       { source: "/stiri", destination: "/", permanent: true },
+      { source: "/google-reviews", destination: "/#recenzii", permanent: true },
+      { source: "/festivalul-celtic", destination: "/ce-faci-la-figa", permanent: true },
+      { source: "/herghelia-beclean", destination: "/ce-faci-la-figa", permanent: true },
+      { source: "/baile-figa-litoralul-bistritenilor", destination: "/", permanent: true },
+      { source: "/feed", destination: "/", permanent: true },
+      { source: "/author/:path*", destination: "/", permanent: true },
     ];
   },
 };
