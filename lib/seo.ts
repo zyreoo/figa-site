@@ -6,15 +6,29 @@ const ADDRESS = { "@type": "PostalAddress", streetAddress: "Strada Băile Figa",
 const GEO = { "@type": "GeoCoordinates", latitude: 47.164053, longitude: 24.207428 };
 const TELEPHONE = PHONE.href.replace("tel:", "");
 
+// Texte scurte pentru linkurile trimise: aplicatiile de mesagerie taie textele lungi.
+const SHARE: Record<string, { title: string; description: string }> = {
+  "/": { title: "Băile Figa Cazare", description: "Hotel, cabane și căsuțe la 3 km de Beclean. De la 250 lei pe noapte." },
+  "/cazare": { title: "Cazare la Băile Figa", description: "Hotel, cabane și căsuțe, de la 250 lei pe noapte." },
+  "/cazare/hotel-select": { title: "Hotel Select, Băile Figa", description: "8 camere, 300 lei pe noapte. Rezervări la 0743 092 226." },
+  "/cazare/cabane-panoramic": { title: "Cabane Panoramic, Băile Figa", description: "Până la 12 persoane, 750 lei pe noapte. Rezervări la 0743 092 226." },
+  "/cazare/casute-sebastian": { title: "Căsuțe Sebastian, Băile Figa", description: "Pat king-size și terasă, 250 lei pe noapte. Rezervări la 0743 092 226." },
+  "/terapii-saline": { title: "Terapii saline, Băile Figa", description: "Aerosoli, camera de sare, băi sărate și nămol." },
+  "/ce-faci-la-figa": { title: "Ce faci la Băile Figa", description: "Aqualand, Legacy, apă sărată și sport." },
+  "/galerie": { title: "Galerie foto, Băile Figa", description: "Hotel, cabane, căsuțe și stațiune." },
+  "/contact": { title: "Rezervări Băile Figa", description: "Rezervări la 0743 092 226 sau 0759 021 090." },
+};
+
 // Titlu, descriere, adresa canonica si imaginea de la distribuire, pentru fiecare pagina.
 export function pageMeta({ title, description, path, og }: { title: string; description: string; path: string; og: string }): Metadata {
-  const images = [{ url: `/og/${og}.jpg`, width: 1200, height: 630, alt: title, type: "image/jpeg" }];
+  const share = SHARE[path] ?? { title, description };
+  const images = [{ url: `/og/${og}.jpg`, width: 1200, height: 630, alt: share.title, type: "image/jpeg" }];
   return {
     title,
     description,
     alternates: { canonical: `${SITE_URL}${path === "/" ? "" : path}` },
-    openGraph: { title, description, url: path, siteName: SITE_NAME, locale: "ro_RO", type: "website", images },
-    twitter: { card: "summary_large_image", title, description, images: [`/og/${og}.jpg`] },
+    openGraph: { ...share, url: path, siteName: SITE_NAME, locale: "ro_RO", type: "website", images },
+    twitter: { card: "summary_large_image", ...share, images: [`/og/${og}.jpg`] },
   };
 }
 
