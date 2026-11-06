@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { lenisRef } from "@/lib/lenis";
 import { PHONE, PHONE2, STAYS } from "@/lib/site";
 import { EASE } from "./Motion";
 import Photo from "./Photo";
@@ -38,9 +37,7 @@ export default function Header() {
 
   // Blocheaza pagina cat timp meniul mobil e deschis.
   useEffect(() => {
-    document.documentElement.classList.toggle("menu-open", mobile);
-    if (mobile) lenisRef.current?.stop();
-    else lenisRef.current?.start();
+    document.documentElement.classList.toggle("no-scroll", mobile);
   }, [mobile]);
 
   useEffect(() => {
@@ -156,7 +153,7 @@ export default function Header() {
 
       <AnimatePresence>
         {mobile ? (
-          <motion.div className="mmenu" data-lenis-prevent initial={{ clipPath: "circle(0% at calc(100% - 46px) 46px)" }} animate={{ clipPath: "circle(150% at calc(100% - 46px) 46px)" }} exit={{ clipPath: "circle(0% at calc(100% - 46px) 46px)", transition: { duration: 0.45, ease: EASE } }} transition={{ duration: 0.7, ease: EASE }}>
+          <motion.div className="mmenu" initial={{ clipPath: "circle(0% at calc(100% - 46px) 46px)" }} animate={{ clipPath: "circle(150% at calc(100% - 46px) 46px)" }} exit={{ clipPath: "circle(0% at calc(100% - 46px) 46px)", transition: { duration: 0.45, ease: EASE } }} transition={{ duration: 0.7, ease: EASE }}>
             <p className="mm-label">Cazare</p>
             <div className="mm-stays">
               {STAYS.map((s, i) => (

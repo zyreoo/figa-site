@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { images } from "@/lib/images";
 import { ALT, GALLERY } from "@/lib/site";
-import { lenisRef } from "@/lib/lenis";
 import { EASE } from "./Motion";
 
 export default function Gallery() {
@@ -18,7 +17,7 @@ export default function Gallery() {
 
   useEffect(() => {
     if (open === null) return;
-    lenisRef.current?.stop();
+    document.documentElement.classList.add("no-scroll");
     const key = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(null);
       if (e.key === "ArrowRight") step(1);
@@ -27,7 +26,7 @@ export default function Gallery() {
     window.addEventListener("keydown", key);
     return () => {
       window.removeEventListener("keydown", key);
-      lenisRef.current?.start();
+      document.documentElement.classList.remove("no-scroll");
     };
   }, [open, step]);
 

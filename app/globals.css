@@ -14,9 +14,7 @@
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-html.menu-open { overflow: hidden; }
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-stopped { overflow: clip; }
+html.no-scroll { overflow: hidden; }
 body { margin: 0; background: #fff; color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: clip; }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }

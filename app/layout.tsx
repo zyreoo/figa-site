@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Great_Vibes, Host_Grotesk } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import SmoothScroll from "@/components/SmoothScroll";
 import JsonLd from "@/components/JsonLd";
 import { businessLd, pageMeta } from "@/lib/seo";
 import { PUBLIC_URL } from "@/lib/site";
@@ -34,7 +33,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
         <a className="skip" href="#continut">Sari la conținut</a>
         <JsonLd data={businessLd()} />
-        <SmoothScroll />
         <Header />
         <main id="continut">{children}</main>
         <Footer />

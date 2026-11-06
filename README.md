@@ -2,7 +2,7 @@
 
 Site de prezentare pentru cazarea de la Băile Figa: Hotel Select, Cabane Panoramic VIP și Căsuțe Sebastian. Rezervările se fac doar la telefon, deci site-ul nu are formular.
 
-Construit cu Next.js (App Router), TypeScript, Motion pentru animații și Lenis pentru scroll.
+Construit cu Next.js (App Router), TypeScript, Motion pentru animații.
 
 ## Pornire
 
