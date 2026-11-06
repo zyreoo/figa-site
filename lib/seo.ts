@@ -22,13 +22,13 @@ const SHARE: Record<string, { title: string; description: string }> = {
 // Titlu, descriere, adresa canonica si imaginea de la distribuire, pentru fiecare pagina.
 export function pageMeta({ title, description, path, og }: { title: string; description: string; path: string; og: string }): Metadata {
   const share = SHARE[path] ?? { title, description };
-  const images = [{ url: `/og/${og}.jpg`, width: 1200, height: 630, alt: share.title, type: "image/jpeg" }];
+  const images = [{ url: `/og/${og}.jpg?v=3`, width: 1200, height: 630, alt: share.title, type: "image/jpeg" }];
   return {
     title,
     description,
     alternates: { canonical: `${SITE_URL}${path === "/" ? "" : path}` },
     openGraph: { ...share, url: path, siteName: SITE_NAME, locale: "ro_RO", type: "website", images },
-    twitter: { card: "summary_large_image", ...share, images: [`/og/${og}.jpg`] },
+    twitter: { card: "summary_large_image", ...share, images: [`/og/${og}.jpg?v=3`] },
   };
 }
 
