@@ -8,11 +8,11 @@ const TELEPHONE = PHONE.href.replace("tel:", "");
 
 // Titlu, descriere, adresa canonica si imaginea de la distribuire, pentru fiecare pagina.
 export function pageMeta({ title, description, path, og }: { title: string; description: string; path: string; og: string }): Metadata {
-  const images = [{ url: `/og/${og}.jpg`, width: 1200, height: 630, alt: title }];
+  const images = [{ url: `/og/${og}.jpg`, width: 1200, height: 630, alt: title, type: "image/jpeg" }];
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: `${SITE_URL}${path === "/" ? "" : path}` },
     openGraph: { title, description, url: path, siteName: SITE_NAME, locale: "ro_RO", type: "website", images },
     twitter: { card: "summary_large_image", title, description, images: [`/og/${og}.jpg`] },
   };

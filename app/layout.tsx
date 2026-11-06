@@ -5,14 +5,14 @@ import Header from "@/components/Header";
 import SmoothScroll from "@/components/SmoothScroll";
 import JsonLd from "@/components/JsonLd";
 import { businessLd, pageMeta } from "@/lib/seo";
-import { SITE_URL } from "@/lib/site";
+import { PUBLIC_URL } from "@/lib/site";
 import "./globals.css";
 
 const sans = Host_Grotesk({ subsets: ["latin", "latin-ext"], variable: "--font-sans", display: "swap" });
 const script = Great_Vibes({ subsets: ["latin", "latin-ext"], weight: "400", variable: "--font-script", display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(PUBLIC_URL),
   ...pageMeta({
     title: "Cazare Băile Figa | Hotel, cabane și căsuțe la 3 km de Beclean",
     description: "Cazare la Băile Figa: Hotel Select, Cabane Panoramic VIP și Căsuțe Sebastian, de la 250 lei pe noapte, aproape de Aqualand și terapiile saline. Rezervări la 0743 092 226.",
