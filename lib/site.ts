@@ -1,7 +1,7 @@
 export const PHONE = { label: "0743 092 226", href: "tel:+40743092226" };
 export const PHONE2 = { label: "0759 021 090", href: "tel:+40759021090" };
 export const MAP = "https://www.google.com/maps?q=47.164053,24.207428";
-export const SITE_URL = "https://bailefigacazare.ro";
+export const SITE_URL = "https://cazarebailefiga.com";
 // Adresa la care raspunde acum site-ul. Linkurile trimise pe WhatsApp sau Facebook isi iau poza de aici.
 // Vercel o seteaza singur si devine domeniul real dupa ce e conectat.
 export const PUBLIC_URL = process.env.PUBLIC_SITE_URL ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : SITE_URL);

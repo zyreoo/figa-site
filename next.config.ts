@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
   // Adresele de pe site-ul vechi, ca sa nu pierdem Google si reclamele.
   async redirects() {
     return [
+      // www trimite spre adresa fara www, ca Google sa vada o singura adresa.
+      { source: "/:path*", has: [{ type: "host", value: "www.cazarebailefiga.com" }], destination: "https://cazarebailefiga.com/:path*", permanent: true },
       { source: "/cabanele-panoramic-si-sebastian-2", destination: "/cazare", permanent: true },
       { source: "/cabanele-panoramic-si-sebastian-2/hotel-select", destination: "/cazare/hotel-select", permanent: true },
       { source: "/cabanele-panoramic-si-sebastian-2/panoramic-vip", destination: "/cazare/cabane-panoramic", permanent: true },

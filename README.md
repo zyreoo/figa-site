@@ -42,4 +42,4 @@ Adresele site-ului vechi sunt redirecționate în `next.config.ts`.
 - Sitemap și robots: `app/sitemap.ts`, `app/robots.ts`
 - Adresele `*.vercel.app` primesc `noindex`; se indexează doar domeniul real
 
-Când domeniul `bailefigacazare.ro` este mutat pe acest site, trimite `https://bailefigacazare.ro/sitemap.xml` în Google Search Console.
+Site-ul principal este `cazarebailefiga.com`. După ce domeniul funcționează, trimite `https://cazarebailefiga.com/sitemap.xml` în Google Search Console.
